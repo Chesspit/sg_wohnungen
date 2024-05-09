@@ -29,9 +29,9 @@ card = dbc.Card(
             html.H5("Information", className="card-title"),
             html.P(
                 """Der öffentlich verfügbare 
-                Datensatz "Belegung neu erstellter Wohnungen" liefert für die Jahre 2011-2019
+                Datensatz "Belegung neu erstellter Wohnungen" enthält für die Jahre 2011-2019
                 Informationen zur Belegung mit Erwachsenen und Kindern.
-                Auf Basis dieser Daten sorgt die Auswertung für eine "Top-Down-Sicht". Die "Heatmap"
+                Auf Basis dieser Daten liefert die Auswertung für eine "Top-Down-Sicht". Die "Heatmap"
                 zeigt die Wohndichte [Definition: (Anzahl Erw. + 0.5 * Anz. Kinder) / Anzahl Zimmer)].
                 Ein Wert von 0.00 impliziert, dass es keine Wohnung mit dieser Anzahl Zimmer für den Zeitraum gibt. 
                 Bei der Einstellung des Zeitraums steht zB 2014 für den 1.1.2014 um 0.00 Uhr.  """,
@@ -123,7 +123,7 @@ def fig_update(zeitraum):
                              color_continuous_midpoint = 0.9,
                              title = "Wohndichte nach Quartier und Anzahl Zimmer",
                              labels = {"WGM": "Anzahl Zimmer", "Quartiersgruppe Name": ""}, 
-                             histfunc="avg", text_auto='.2f', color_continuous_scale='Blues')
+                             histfunc="avg", text_auto='.2f', color_continuous_scale='YlGnBu')
 
     # fig.update_layout(coloraxis_showscale=False)
     fig.update_layout(
