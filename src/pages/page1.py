@@ -12,8 +12,6 @@ dash.register_page(__name__, path='/', name="Übersicht")
 # Path
 BASE_PATH = pathlib.Path(__file__).parent.resolve()
 DATA_PATH = BASE_PATH.joinpath("../assets").resolve()
-# print(BASE_PATH)
-# print(DATA_PATH)
 
 # Read data
 df = pd.read_csv(DATA_PATH.joinpath("df.csv"))
@@ -125,7 +123,6 @@ def fig_update(zeitraum):
                              labels = {"WGM": "Anzahl Zimmer", "Quartiersgruppe Name": ""}, 
                              histfunc="avg", text_auto='.2f', color_continuous_scale='YlGnBu')
 
-    # fig.update_layout(coloraxis_showscale=False)
     fig.update_layout(
     coloraxis_showscale=False,
     yaxis_title=None,
@@ -144,10 +141,8 @@ def fig_update(zeitraum):
     Input("auswahl", "value"),
 )
 def table_update(zeitraum, auswahl):
-    # print("huhu3")
     df_filtered = filter_df(zeitraum)
     if auswahl == 'Anzahl Wohnungen':
-        print("huhu44")
         df_grouped = df_filtered.groupby(['Quartiersgruppe Name', 'WGM'])['ID'].nunique().reset_index()
         df_table = df_grouped.pivot(index='WGM', columns='Quartiersgruppe Name', values='ID')
         df_table = df_table.reset_index()
@@ -164,7 +159,6 @@ def table_update(zeitraum, auswahl):
         )
         return tabelle
     elif auswahl == 'Wohnungswechsel':
-        print("huhu11")
         df_grouped = df_filtered.groupby(['Quartiersgruppe Name', 'WGM'])['Wechsel'].mean().reset_index()
         df_table = df_grouped.pivot(index='WGM', columns='Quartiersgruppe Name', values='Wechsel')
         df_table = df_table.reset_index()
@@ -181,7 +175,6 @@ def table_update(zeitraum, auswahl):
         )
         return tabelle
     elif auswahl == 'Überbelegung':
-        print("huhu22")
         df_grouped = df_filtered.groupby(['Quartiersgruppe Name', 'WGM'])['Ueberbelegung'].sum().reset_index()
         df_table = df_grouped.pivot(index='WGM', columns='Quartiersgruppe Name', values='Ueberbelegung')
         df_table = df_table.reset_index()
@@ -198,7 +191,6 @@ def table_update(zeitraum, auswahl):
         )
         return tabelle
     elif auswahl == 'Kinder':
-        print("huhu33")
         df_grouped = df_filtered.groupby(['Quartiersgruppe Name', 'WGM'])['Anz_Kinder'].mean().reset_index()
         df_table = df_grouped.pivot(index='WGM', columns='Quartiersgruppe Name', values='Anz_Kinder')
         df_table = df_table.reset_index()
@@ -215,7 +207,6 @@ def table_update(zeitraum, auswahl):
         )        
         return tabelle        
     elif auswahl == 'Anzahl Kinder':
-        print("huhu55")
         df_grouped = df_filtered.groupby(['Quartiersgruppe Name', 'WGM'])['Anz_Kinder'].sum().reset_index()
         df_table = df_grouped.pivot(index='WGM', columns='Quartiersgruppe Name', values='Anz_Kinder')
         df_table = df_table.reset_index()
