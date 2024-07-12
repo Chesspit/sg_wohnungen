@@ -1,7 +1,7 @@
 ### Belegung neuer Wohnungen in St. Gallen
 - - - 
 #### Info zur App
-Diese App basiert auf der "Open Data Platform" Dash. Sie umfasst eine Heatmap und eine AG Grid Tabelle und bietet die Möglichkeit, den Datensatz aus einer "Top-Down-Sicht" interaktiv zu erkunden. 
+Diese App basiert auf dem "Open-Source-Framework" Dash. Sie umfasst eine Heatmap und eine AG Grid Tabelle und bietet die Möglichkeit, den Datensatz aus einer "Top-Down-Sicht" interaktiv zu erkunden. 
 - - -
 [<img src="https://cdn.rawgit.com/plotly/dash-docs/b1178b4e/images/dash-logo-stripe.svg" align="right" width="150">](https://plot.ly/products/dash/)
 #### Info zur Dash
